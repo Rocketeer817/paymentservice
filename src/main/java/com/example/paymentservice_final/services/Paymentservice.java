@@ -22,7 +22,7 @@ public class Paymentservice {
         long amount = 1000;
 
         // Make a call to payment gateway to generate payment link
-        String paymentLink = paymentGatewayChooser.choosePaymentGateway().generatePaymentLink(orderId, email, phoneNo, amount, "http://localhost:8080/payment/callback");
+        String paymentLink = paymentGatewayChooser.choosePaymentGateway().generatePaymentLink(orderId, email, phoneNo, amount);
         return paymentLink;
     }
 }

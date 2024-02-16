@@ -20,7 +20,7 @@ public class StripePaymentGateway implements PaymentGateway{
     String apiKey;
 
     @Override
-    public String generatePaymentLink(String orderId, String email, String phoneNo ,long amount, String callback_url) {
+    public String generatePaymentLink(String orderId, String email, String phoneNo ,long amount) {
 
         Stripe.apiKey = apiKey;
 

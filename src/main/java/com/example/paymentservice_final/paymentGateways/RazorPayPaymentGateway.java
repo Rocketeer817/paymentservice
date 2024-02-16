@@ -13,12 +13,14 @@ public class RazorPayPaymentGateway implements PaymentGateway{
 
     private RazorpayClient razorpayClient;
 
+    private final String callback_url = "http://localhost:8080/payment/callback";
+
     public RazorPayPaymentGateway(RazorpayClient razorpayClient){
         this.razorpayClient = razorpayClient;
     }
 
     @Override
-    public String generatePaymentLink(String orderId, String email, String phoneNo ,long amount,String callback_url) {
+    public String generatePaymentLink(String orderId, String email, String phoneNo ,long amount) {
         try{
             JSONObject paymentLinkRequest = new JSONObject();
             paymentLinkRequest.put("amount",amount);
